@@ -10,7 +10,7 @@ public class PlatformGenarator : MonoBehaviour {
     private float platformWidth;
 		void Start () {
 
-        platformWidth = thePlatform.GetComponent<BoxCollider2D>().size.x;
+        platformWidth = thePlatform.GetComponent<BoxCollider>().size.x;
 	}
 	
 	void Update () {
