@@ -25,11 +25,13 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         CharacterController controller = GetComponent<CharacterController>();
+		//zet in start 
         if (controller.isGrounded)
         {
             moveDirection = new Vector3(1, 0, Input.GetAxis("Vertical"));
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= speed;
+			//gebruik hieronder || om het in 1 if statement te zetten
             if (Input.GetButton("Jump"))
             {
                 moveDirection.y = jumpSpeed;

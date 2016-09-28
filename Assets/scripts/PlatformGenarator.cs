@@ -7,9 +7,9 @@ public class PlatformGenarator : MonoBehaviour {
     public Transform generationPoint;
     public float distanceBetween;
 
-    private float platformWidth;
-		void Start () {
+    private float platformWidth;	
 
+	void Start () { 
         platformWidth = thePlatform.GetComponent<BoxCollider>().size.x;
 	}
 	
