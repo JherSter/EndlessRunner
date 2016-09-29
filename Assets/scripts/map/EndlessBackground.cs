@@ -17,7 +17,10 @@ public class EndlessBackground : MonoBehaviour {
 
 		void Update ()
 		{
+
+        transform.Translate(Vector3.left * Time.deltaTime * scrollSpeed);
+        /*
 			float newPosition = Mathf.Repeat(Time.time * scrollSpeed, tileSizeZ);
-			transform.position = startPosition + Vector3.forward * newPosition;
+			transform.position = Vector3.right * newPosition*/
 		}
 	}
