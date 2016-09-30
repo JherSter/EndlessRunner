@@ -24,6 +24,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+
+        
+		if (transform.position.y <= -10) {
+			Debug.Log ("lol");
+			Application.LoadLevel ("main menu");
+		}
+	
         CharacterController controller = GetComponent<CharacterController>();
 		//zet in start 
         if (controller.isGrounded)
