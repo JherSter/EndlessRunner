@@ -5,13 +5,11 @@ public class EndlessBackground : MonoBehaviour {
 	
 		public float scrollSpeed;
 		public float tileSizeZ;
-
-		private Vector3 startPosition;
+    
 
 
 		void Start ()
 		{
-			startPosition = transform.position;
 
 		}
 
