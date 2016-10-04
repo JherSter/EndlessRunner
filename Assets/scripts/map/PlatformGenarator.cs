@@ -41,7 +41,7 @@ public class PlatformGenarator : MonoBehaviour {
         {
 			Vector2 randomPosition = originPosition + new Vector2 (Random.Range(horizontalMin, horizontalMax), Random.Range (verticalMin, verticalMax));
 			transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, transform.position.y, transform.position.z);
-			Instantiate(platform, randomPosition, transform.rotation);
+ 			Instantiate(platform, randomPosition, transform.rotation);
 			//Instantiate(platform, randomPosition, Quaternion.identity);
 			originPosition = randomPosition;
         }

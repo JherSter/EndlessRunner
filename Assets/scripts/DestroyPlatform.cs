@@ -10,13 +10,8 @@ public class DestroyPlatform : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		Destroy (gameObject, 10f);
 	}
-	void OnCollisionEnter(Collision coll){
-		if (coll.gameObject.tag == "Player") {
-			Debug.Log ("aids");
-			Destroy (gameObject, 5f);
-	}
-}
 
 }
+
