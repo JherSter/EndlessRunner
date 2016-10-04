@@ -10,9 +10,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpSpeed = 8.0F;
     public float gravity = 20.0F;
     private Vector3 moveDirection = Vector3.zero;
-	private float speedF = 0f; //speed forward.
+	
 	private float max = 20f; //max speed forward.
-	private float accel = .1f; //acceleratie Algemeen.
+	private float accel = .001f; //acceleratie Algemeen.
 
     void Start()
     {
