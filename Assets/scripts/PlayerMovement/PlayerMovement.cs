@@ -31,8 +31,10 @@ public class PlayerMovement : MonoBehaviour
         
 		if (transform.position.y <= -10) {
 			Debug.Log ("lol");
-			Application.LoadLevel ("main menu");
-		}
+       Application.LoadLevel("main menu");           
+
+           
+               }
 	
         CharacterController controller = GetComponent<CharacterController>();
 		speed += accel;

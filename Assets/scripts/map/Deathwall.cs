@@ -8,10 +8,11 @@ public class Deathwall : MonoBehaviour {
 
     {
         if (col.gameObject.name == "player")
-
+            Application.LoadLevel("main menu");
         {
 
             Destroy(col.gameObject);
+            
         }
     }
 
