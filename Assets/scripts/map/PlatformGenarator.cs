@@ -13,6 +13,14 @@ public class PlatformGenarator : MonoBehaviour {
     public Transform generationPoint;
     public float distanceBetween;
      private float platformWidth;
+	private float random;
+	private float landom;
+	[SerializeField]
+	private GameObject Pickupl;
+	[SerializeField]
+	private GameObject Spikes;
+
+
 
 
 
@@ -24,6 +32,7 @@ public class PlatformGenarator : MonoBehaviour {
         originPosition = transform.position;
         Spawn ();
          platformWidth = thePlatform.GetComponent<BoxCollider>().size.x;
+
     
     }
 
@@ -37,17 +46,38 @@ public class PlatformGenarator : MonoBehaviour {
         }
     }
     void Update () {
-        if (transform.position.x < generationPoint.position.x)
-        {
-			Vector2 randomPosition = originPosition + new Vector2 (Random.Range(horizontalMin, horizontalMax), Random.Range (verticalMin, verticalMax));
-			transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, transform.position.y, transform.position.z);
- 			Instantiate(platform, randomPosition, transform.rotation);
+		if (transform.position.x < generationPoint.position.x) {
+			Vector2 randomPosition = originPosition + new Vector2 (Random.Range (horizontalMin, horizontalMax), Random.Range (verticalMin, verticalMax));
+			transform.position = new Vector3 (transform.position.x + platformWidth + distanceBetween, transform.position.y, transform.position.z);
+			Instantiate (platform, randomPosition, transform.rotation);
 			//Instantiate(platform, randomPosition, Quaternion.identity);
 			originPosition = randomPosition;
-        }
+			random = Random.value * 100f;
+			landom = Random.value * 100f;
+
+			if (random < 10) {
+				Pickupl.gameObject.SetActive (true);
+				Invoke ("Deactivate", 10f);
+
+				Debug.Log ("lol");
+
+			}if (landom < 30) {
+				Spikes.gameObject.SetActive (true);
+				Invoke("Deactivate",10f );
+
+				Debug.Log ("LOL");
+
+
+
+			}
+		}
+	}
+	void Deactivate(){
+		Spikes.gameObject.SetActive (false);
+		Pickupl.gameObject.SetActive (false);
 	}
 	void OnBecameInvisible(){
 		Destroy (gameObject);
 	}
-
+	
 }

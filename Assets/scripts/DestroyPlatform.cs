@@ -8,10 +8,17 @@ public class DestroyPlatform : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		Destroy (gameObject, 10f);
-	}
+	void OnCollisionEnter(Collision coll) {
+		Debug.Log(coll.gameObject.tag);
+
+
+		if (coll.gameObject.tag == "Player") {
+			Debug.Log("ello");
+
+
+			Destroy (gameObject);
 
 }
 
+}
+}
