@@ -16,7 +16,7 @@ public class DestroyPlatform : MonoBehaviour {
 			Debug.Log("ello");
 
 
-			Destroy (gameObject);
+			Destroy (gameObject, 10f);
 
 }
 

@@ -21,10 +21,10 @@ public class SpeedPickup : MonoBehaviour {
 		if (coll.gameObject.tag == "Player") {
 			Debug.Log("ello");
 			
-			playerMovement.speed = 115f;
+
 			Destroy (gameObject);
-				
-			}
+
 		}
 
 	}
+}

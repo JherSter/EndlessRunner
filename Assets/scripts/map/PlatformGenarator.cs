@@ -56,14 +56,13 @@ public class PlatformGenarator : MonoBehaviour {
 			landom = Random.value * 100f;
 
 			if (random < 10) {
-				Pickupl.gameObject.SetActive (true);
-				Invoke ("Deactivate", 10f);
+				Instantiate (Pickupl, new Vector2(randomPosition.x, randomPosition.y + 2f), transform.rotation);
+				}
 
 				Debug.Log ("lol");
 
-			}if (landom < 30) {
-				Spikes.gameObject.SetActive (true);
-				Invoke("Deactivate",10f );
+			if (landom < 30) {
+				Instantiate (Spikes, new Vector2(randomPosition.x + 1f, randomPosition.y + 1f), transform.rotation);
 
 				Debug.Log ("LOL");
 
@@ -73,8 +72,7 @@ public class PlatformGenarator : MonoBehaviour {
 		}
 	}
 	void Deactivate(){
-		Spikes.gameObject.SetActive (false);
-		Pickupl.gameObject.SetActive (false);
+		
 	}
 	void OnBecameInvisible(){
 		Destroy (gameObject);
