@@ -4,10 +4,7 @@ using System.Collections;
 public class EndlessBackground : MonoBehaviour {
 	
 		public float scrollSpeed;
-		public float tileSizeZ;
     
-
-
 		void Start ()
 		{
 
@@ -16,9 +13,8 @@ public class EndlessBackground : MonoBehaviour {
 		void Update ()
 		{
 
-        transform.Translate(Vector3.left * Time.deltaTime * scrollSpeed);
-        /*
-			float newPosition = Mathf.Repeat(Time.time * scrollSpeed, tileSizeZ);
-			transform.position = Vector3.right * newPosition*/
+        transform.Translate(Vector3.right * Time.deltaTime * scrollSpeed);
+        
+		
 		}
 	}

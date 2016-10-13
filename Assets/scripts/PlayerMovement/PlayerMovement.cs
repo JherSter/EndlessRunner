@@ -67,5 +67,6 @@ public class PlayerMovement : MonoBehaviour
 
         //After we move, adjust the camera to follow the player
         playerCamera.transform.position = new Vector3(transform.position.x, transform.position.y , playerCamera.transform.position.z);
+        
     }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlatformGenarator : MonoBehaviour {
 
-    public int maxPlatforms = 20;
+    public int maxPlatforms = 1;
     public GameObject platform;
     public float horizontalMin = 4;
     public float horizontalMax = 2;
