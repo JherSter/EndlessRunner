@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+//using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+       
         if (playerCamera == null)
         {
             playerCamera = Camera.main;
@@ -31,10 +33,10 @@ public class PlayerMovement : MonoBehaviour
         
 		if (transform.position.y <= -10) {
 			Debug.Log ("lol");
-       Application.LoadLevel("main menu");           
+            Application.LoadLevel("main menu");           
+            //SceneManager.LoadScene("main menu", LoadSceneMode.Additive);
 
-           
-               }
+        }
 	
         CharacterController controller = GetComponent<CharacterController>();
 		speed += accel;
@@ -47,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 		//zet in start 
         if (controller.isGrounded)
         {
-            moveDirection = new Vector3(1, 0, Input.GetAxis("Vertical"));
+            moveDirection = new Vector3(1, 0, 0);
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= speed;
 			//gebruik hieronder || om het in 1 if statement te zetten

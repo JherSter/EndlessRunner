@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class distance_counter : MonoBehaviour
+public class timer : MonoBehaviour
 {
 
-    public float targetTime = 60.0f;
+    public float targetTime = 20.0f;
     Text text;
 
     void Update()
@@ -22,9 +22,7 @@ public class distance_counter : MonoBehaviour
 
     void timerEnded()
     {
-        if{
-
-        }
+        Application.LoadLevel("main menu");
         //do your stuff here.
     }
     void Awake()
