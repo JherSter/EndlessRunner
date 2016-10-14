@@ -12,7 +12,7 @@ public class SpeedPickup : MonoBehaviour {
 		
 		//Player = GObject.FindGameObjectWithTag ("Player");
 		//TimeLeft = GameObject.FindGameObjectWithTag ("Canvas").GetComponent<Text> ();
-		TimeLeft = GameObject.Find("Canvas").GetComponentInChildren<timer>();
+		TimeLeft = GameObject.Find("timer").GetComponentInChildren<timer>();
 
 	}
 
