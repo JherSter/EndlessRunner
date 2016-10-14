@@ -2,37 +2,39 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class distance_counter : MonoBehaviour{
+public class distance_counter : MonoBehaviour
+{
 
-    public float distance;
-    public Transform player;
-    public static int score;
-
+    public float targetTime = 60.0f;
     Text text;
 
+    void Update()
+    {
+
+        targetTime -= Time.deltaTime;
+        text.text = "TimeLeft:"  + targetTime;
+
+        if (targetTime <= 0.0f)
+        {
+            timerEnded();
+        }
+
+    }
+
+    void timerEnded()
+    {
+        //do your stuff here.
+    }
     void Awake()
     {
         text = GetComponent<Text>();
-        score = 0;
 
-        distance = Vector3.Distance(player.position, transform.position);
-    }
-    void Update()
-    {
-        Score();
-        Debug.Log ("joer");
 
-        text.text = "Score:" + score;
     }
 
-    void Score()
-    {
-        distance = Vector3.Distance(player.position, transform.position);
-
-        //Debug.Log(player.position);
-        //Debug.Log(transform.position);
-
-        score = Mathf.RoundToInt(distance);
-    }
 
 }
+
+
+
+
