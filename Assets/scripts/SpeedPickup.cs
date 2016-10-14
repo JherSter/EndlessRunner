@@ -23,7 +23,7 @@ public class SpeedPickup : MonoBehaviour {
 
 		if (coll.gameObject.tag == "Player") {
 			Debug.Log("ello");
-	;
+	
 			
 
 			Destroy (gameObject);
