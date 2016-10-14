@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SpeedPickup : MonoBehaviour {
 	
-
+	private timer TimeLeft;
 	
 
 
@@ -12,7 +12,7 @@ public class SpeedPickup : MonoBehaviour {
 		
 		//Player = GObject.FindGameObjectWithTag ("Player");
 		//TimeLeft = GameObject.FindGameObjectWithTag ("Canvas").GetComponent<Text> ();
-	
+		TimeLeft = GameObject.Find("Canvas").GetComponentInChildren<timer>();
 
 	}
 
@@ -23,8 +23,8 @@ public class SpeedPickup : MonoBehaviour {
 
 		if (coll.gameObject.tag == "Player") {
 			Debug.Log("ello");
-	;
-			
+	
+			TimeLeft.targetTime += 10f;
 
 			Destroy (gameObject);
 
