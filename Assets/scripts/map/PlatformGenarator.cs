@@ -20,10 +20,6 @@ public class PlatformGenarator : MonoBehaviour {
 	[SerializeField]
 	private GameObject Spikes;
 
-
-
-
-
     private Vector2 originPosition;
 
 
@@ -46,7 +42,7 @@ public class PlatformGenarator : MonoBehaviour {
         }
     }
     void Update () {
-		if (transform.position.x < generationPoint.position.x) {
+		if (originPosition.x < generationPoint.position.x) {
 			Vector2 randomPosition = originPosition + new Vector2 (Random.Range (horizontalMin, horizontalMax), Random.Range (verticalMin, verticalMax));
 			transform.position = new Vector3 (transform.position.x + platformWidth + distanceBetween, transform.position.y, transform.position.z);
 			Instantiate (platform, randomPosition, transform.rotation);
@@ -57,25 +53,23 @@ public class PlatformGenarator : MonoBehaviour {
 
 			if (random < 10) {
 				Instantiate (Pickupl, new Vector2(randomPosition.x, randomPosition.y + 2f), transform.rotation);
-				}
 
-				Debug.Log ("lol");
+				Debug.Log ("Pickup");
+			}
+
+				
 
 			if (landom < 30) {
 				Instantiate (Spikes, new Vector2(randomPosition.x + 1f, randomPosition.y + 1f), transform.rotation);
 
-				Debug.Log ("LOL");
+				Debug.Log ("spikes");
 
 
 
 			}
 		}
 	}
-	void Deactivate(){
-		
-	}
-	void OnBecameInvisible(){
-		Destroy (gameObject);
-	}
+
+
 	
 }
